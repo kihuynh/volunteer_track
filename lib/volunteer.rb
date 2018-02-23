@@ -2,9 +2,9 @@ class Volunteer
   attr_reader(:name, :project_id, :id)
 
   def initialize(attributes)
-    @name = attributes(:name)
-    @project_id = attributes(:project_id)
-    @id = attributes(:id)
+    @name = attributes.fetch(:name)
+    @project_id = attributes.fetch(:project_id)
+    @id = attributes.fetch(:id)
   end
 
   def self.all
@@ -25,6 +25,7 @@ class Volunteer
 
 
   def ==(extra_volunteer)
-    self.name().==(extra_volunteer.name()) # HELLA don't like this line.&(self.project_id().==(extra_volunteer.project_id())
+    self.name().==(extra_volunteer.name()).&(self.project_id().==(extra_volunteer.project_id()))
   end
+
 end
