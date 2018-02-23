@@ -11,7 +11,7 @@ class Project
     @id = result.first().fetch("id").to_i()
   end
 
-  # def ==(extra_project)
-  #   self.name().==(extra_project.name())
-  # end
+  def ==(extra_project)
+    self.title().==(extra_project.title())
+  end
 end
