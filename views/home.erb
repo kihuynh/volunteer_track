@@ -4,9 +4,29 @@
   <div class="row">
     <div class="col-md-6">
       Create Form
+    <form action="/" method="post">
+      <label for="title">Enter Project Name</label>
+      <input name="title" type="text" id="title">
+      <button type="submit" class="btn btn-info">Add project</button>
+    </form>
+
     </div>
+
     <div class="col-md-6">
-      Current Projects
+      <h3>Projects</h3>
+      <% if @projects.any? %>
+      <p>Click to view projects:</p>
+      <ul>
+        <% @projects.each do |project| %>
+        <li>
+          <a href="/projects/<%= project.id %>"> project.name </a>
+        </li>
+      <% end %>
+      </ul>
+      <% else %>
+      <p>There are no current projects.</p>
+      <% end %>
     </div>
+
   </div>
 </div>
