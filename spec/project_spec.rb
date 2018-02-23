@@ -1,7 +1,7 @@
-require 'rspec'
-require 'pg'
-require 'project'
-require 'spec_helper'
+require('rspec')
+require('pg')
+require('project')
+require('spec_helper')
 
 
 describe Project do
