@@ -7,12 +7,13 @@ class Volunteer
   end
 
   def self.all
-    # returned_volunteers = DB.exec("SELECT * FROM volunteers;")
+    returned_volunteers = DB.exec("SELECT * FROM volunteers;")
     volunteers = []
   end
 
-  # def save
-  # end
+  def save
+    DB.exec("INSERT INTO volunteers (name, project_id) VALUES ('#{@description}', #{@project_id});")
+  end
 
   def ==(extra_volunteer)
     self.name().==(extra_volunteer.name()) # HELLA don't like this line.&(self.list_id().==(extra_volunteer.list_id())
