@@ -1,6 +1,7 @@
 require('rspec')
 require('volunteer')
 require('pry')
+require('pg')
 require('spec_helper')
 
 describe Volunteer do

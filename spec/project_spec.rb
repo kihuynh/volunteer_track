@@ -1,4 +1,5 @@
 require('rspec')
+require('pry')
 require('pg')
 require('project')
 require('spec_helper')
