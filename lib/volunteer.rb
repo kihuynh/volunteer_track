@@ -6,6 +6,12 @@ class Volunteer
     @project_id = attributes.fetch(:project_id)
   end
 
+  def self.all
+    # returned_volunteers = DB.exec("SELECT * FROM volunteers;")
+    volunteers = []
+  end
+
+
   def ==(extra_volunteer)
     self.name().==(extra_volunteer.name()) # HELLA don't like this line.&(self.list_id().==(extra_volunteer.list_id())
   end
