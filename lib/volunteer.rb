@@ -11,6 +11,8 @@ class Volunteer
     volunteers = []
   end
 
+  # def save
+  # end
 
   def ==(extra_volunteer)
     self.name().==(extra_volunteer.name()) # HELLA don't like this line.&(self.list_id().==(extra_volunteer.list_id())
