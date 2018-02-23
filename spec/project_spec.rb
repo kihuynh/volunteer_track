@@ -4,7 +4,7 @@ require('project')
 require('spec_helper')
 
 
-describe Project do
+# describe Project do
   # describe '#title' do
   #   it 'returns the project title' do
   #     project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
@@ -94,4 +94,4 @@ describe Project do
   #     expect(Project.all).to eq []
   #   end
   # end
-end
+# end
