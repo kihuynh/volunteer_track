@@ -49,6 +49,10 @@ class Project
     self.title().==(extra_project.title()).&(self.id().==(extra_project.id()))
   end
 
-
+  def update(attributes)
+    @title = attributes[:title]
+    @id = self.id()
+    DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id}")
+  end
 
 end
