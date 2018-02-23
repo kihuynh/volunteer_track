@@ -1,6 +1,6 @@
 # Volunteer Tracker
 
-#### Ruby application that tracks projects and volunteers. , 2/23/2018
+#### Ruby application that tracks projects and volunteers using databases , 2/23/2018
 
 #### By Kim Huynh
 
@@ -19,11 +19,11 @@ $ git clone https://github.com/kihuynh/volunteer.git
   - run postgres in terminal (unless you have it running automatically)
   - $ psql
   - enter the following into the terminal
-    - # createdb [DATABASE NAME]
-    - # psql [DATABASE_NAME] < database_backup.psql
-    - # createdb -T [DATABASE NAME] [TEST DATABASE NAME]
+    - createdb [DATABASE NAME]
+    - psql [DATABASE_NAME] < database_backup.psql
+    - createdb -T [DATABASE NAME] [TEST DATABASE NAME]
 
-#### Basic Functionality
+### Basic Functionality
 
 - Ability to add project names, and will show up on project list.
 - Click on project list
