@@ -14,4 +14,9 @@ class Project
   def ==(extra_project)
     self.title().==(extra_project.title())
   end
+
+  def self.all
+    returned_projects = DB.exec("SELECT * FROM projects;")
+    projects = []
+  end
 end
