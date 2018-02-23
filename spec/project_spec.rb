@@ -1,17 +1,13 @@
-require('rspec')
-require('pry')
-require('pg')
-require('project')
 require('spec_helper')
 
 
-# describe Project do
-  # describe '#title' do
-  #   it 'returns the project title' do
-  #     project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
-  #     expect(project.title).to eq 'Teaching Kids to Code'
-  #   end
-  # end
+describe Project do
+  describe '#title' do
+    it 'returns the project title' do
+      project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+      expect(project.title).to eq 'Teaching Kids to Code'
+    end
+  end
   #
   # context '#id' do
   #   it 'returns the id of the project before saving project' do
@@ -95,4 +91,4 @@ require('spec_helper')
   #     expect(Project.all).to eq []
   #   end
   # end
-# end
+end

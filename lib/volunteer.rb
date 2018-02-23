@@ -1,10 +1,10 @@
 class Volunteer
-  attr_reader(:name, :project_id, :id)
+  attr_reader :name, :project_id, :id
 
   def initialize(attributes)
-    @name = attributes.fetch(:name)
-    @project_id = attributes.fetch(:project_id)
-    @id = attributes.fetch(:id)
+    @name = attributes[:name]
+    @project_id = attributes[:project_id]
+    @id = attributes[:id]
   end
 
   def self.all
