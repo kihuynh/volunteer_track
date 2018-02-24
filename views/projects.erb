@@ -3,8 +3,26 @@
 
 <h1> <%= @projects.title %> </h1>
 <h3>Add Volunteers </h3>
-<form action="/projects/<% @project_id %>" method="post">
+<form action="/projects/<%= @project_id %>" method="post">
   <label for="name">Enter volunteer name:</label>
   <input name="name" type="text">
   <button type="submit" class="btn btn-info">Add</button>
 </form>
+
+
+<h3>Volunteer List</h3>
+<% if @volunteers.any? %>
+<p>Volunteers</p>
+<ul>
+  <% @volunteers.each do |volunteer| %>
+  <li>
+    <a href="/projects/<%= project_id %>"> <%= @volunteers.name %> </a>
+  </li>
+<% end %>
+</ul>
+<% else %>
+<p>No volunteers for this project.</p>
+<% end %>
+
+
+<a href="/"><button type="button" name="button" class="btn btn-danger">This link will allow for editing of project later on </button></a>
