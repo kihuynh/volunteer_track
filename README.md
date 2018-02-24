@@ -13,7 +13,7 @@ Ruby application that tracks a project and their volunteers. By viewing, adding,
 To clone this repository.
 Open terminal
 Run the following command in your terminal to clone on local machine.
-$ git clone https://github.com/kihuynh/volunteer.git
+$ git clone https://github.com/kihuynh/volunteer_track.git
 
 * To load sql database
   - run postgres in terminal (unless you have it running automatically)

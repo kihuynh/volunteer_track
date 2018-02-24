@@ -1,0 +1,10 @@
+<!-- View selected project and see volunteer name and add dem -->
+<a href="/">Return Home</a>
+
+<h1> <%= @projects.title %> </h1>
+<h3>Add Volunteers </h3>
+<form action="/projects/<% @project_id %>" method="post">
+  <label for="name">Enter volunteer name:</label>
+  <input name="name" type="text">
+  <button type="submit" class="btn btn-info">Add</button>
+</form>

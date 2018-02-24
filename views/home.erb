@@ -1,18 +1,20 @@
 <h1>Volunteer Tracker</h1>
-
+<p>A new and not new way of tracking your projects</p>
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      Create Form
+    <div class="col-md-5">
+    <h3>Create A New Project</h3>
     <form action="/" method="post">
-      <label for="title">Enter Project Name</label>
-      <input name="title" type="text" id="title">
-      <button type="submit" class="btn btn-info">Add project</button>
+      <div class="form-group">
+        <label for="title">Enter Project Name</label>
+        <input name="title" type="text" id="title" class="form-control">
+        <button type="submit" class="btn btn-info">Add project</button>
+      </div>
     </form>
-
     </div>
-
-    <div class="col-md-6">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-5">
       <h3>Projects</h3>
       <% if @projects.any? %>
       <p>Click to view projects:</p>
