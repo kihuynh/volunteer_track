@@ -30,15 +30,20 @@ get('/projects/:id') do
 end
 
 # add volunteers
-# post('/projects/:id') do
-#   @projects = Project.find(params.fetch("id").to_i)
-#   name = params.fetch("name")
-#   project_id = params.fetch("project_id").to_i
-#   id = volunteer.fetch("id").to_i
-#   volunteer = Volunteer.new({:name => name, :project_id => project_id, :id => nil})
-#   volunteer.save
-#   @volunteers = Volunteer.all
-#   erb(:projects)
-# end
+post('/projects/:id') do
+  @projects = Project.find(params.fetch("id").to_i)
+  name = params.fetch("name")
+  project_id = params.fetch("project_id").to_i
+  # id = volunteer.fetch("id").to_i
+  volunteer = Volunteer.new({:name => name, :project_id => project_id, :id => nil})
+  volunteer.save
+  @volunteers = Volunteer.all
+  erb(:projects)
+end
 
 # edit project. to delete, and update. edit project name. delete volunteers?
+get('projects/:id/edit') do
+  @projects = Project.find(params.fetch("id").to_i)
+
+  erb(:project_edit)
+end
