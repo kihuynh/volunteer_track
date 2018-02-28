@@ -38,9 +38,9 @@ class Project
     found_volunteers = []
     volunteers.each() do |volunteer|
       name = volunteer.fetch("name")
-      # project_id = volunteer.fetch("project_id").to_i
+      @project.id = volunteer.fetch("project.id").to_i
       id = volunteer.fetch("id").to_i
-      found_volunteers.push(Volunteer.new({:name => name, :project_id => project_id, :id => id}))
+      found_volunteers.push(Volunteer.new({:name => name, :project_id => @project.id, :id => id}))
     end
     found_volunteers
   end

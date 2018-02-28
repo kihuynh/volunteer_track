@@ -24,20 +24,21 @@ end
 
 # goes to project id
 get('/projects/:id') do
-  @projects = Project.find(params.fetch("id").to_i)
+  @project = Project.find(params.fetch("id").to_i)
   @volunteers = Volunteer.all
   erb(:projects)
 end
 
 # add volunteers
 post('/projects/:id') do
-  @projects = Project.find(params.fetch("id").to_i)
+  @project = Project.find(params.fetch("id").to_i)
   name = params.fetch("name")
-  project_id = params.fetch("project_id").to_i
-  # id = volunteer.fetch("id").to_i
-  volunteer = Volunteer.new({:name => name, :project_id => project_id, :id => nil})
+  @project.id = params.fetch("project.id").to_i
+  id = volunteer.fetch("id").to_i
+  volunteer = Volunteer.new({:name => name, :project_id => @project.id, :id => nil})
   volunteer.save
-  @volunteers = Volunteer.all
+  # @project.id = volunteer.project_id
+  # @volunteers = Volunteer.all
   erb(:projects)
 end
 

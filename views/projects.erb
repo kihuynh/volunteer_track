@@ -1,9 +1,9 @@
 <!-- View selected project and see volunteer name and add dem -->
 <a href="/">Return Home</a>
 
-<h1> <%= @projects.title %> </h1>
+<h1> <%= @project.title %> </h1>
 <h3>Add Volunteers </h3>
-<form action="/projects/<%= @projects_id %>" method="post">
+<form action="/projects/<%= @project.id %>" method="post">
   <label for="name">Enter volunteer name:</label>
   <input name="name" type="text">
   <button type="submit" class="btn btn-info">Add</button>
@@ -11,12 +11,12 @@
 
 
 <h3>Volunteer List</h3>
-<% if @volunteers.any? %>
+<% if @project.volunteers.any? %>
 <p>Volunteers</p>
 <ul>
-  <% @volunteers.each do |volunteer| %>
+  <% @project.volunteers.each do |volunteer| %>
   <li>
-    <a href="/volunteer/<%= volunteer.id %>"> <%= @volunteers.name %> </a>
+    <a href="/volunteer/<%= volunteer.id %>"> <%= volunteer.name %> </a>
   </li>
 <% end %>
 </ul>
