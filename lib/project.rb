@@ -33,17 +33,17 @@ class Project
   end
 
  # kinda confused how it works
-  def volunteers
-    volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{self.id()}")
-    found_volunteers = []
-    volunteers.each() do |volunteer|
-      name = volunteer.fetch("name")
-      @project.id = volunteer.fetch("project.id").to_i
-      id = volunteer.fetch("id").to_i
-      found_volunteers.push(Volunteer.new({:name => name, :project_id => @project.id, :id => id}))
-    end
-    found_volunteers
-  end
+ def volunteers
+   volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{self.id()}")
+   found_volunteers = []
+   volunteers.each() do |volunteer|
+     name = volunteer.fetch("name")
+     # project_id = volunteer.fetch("product_id").to_i
+     id = volunteer.fetch("id").to_i
+     found_volunteers.push(Volunteer.new({:name => name, :id => id}))
+   end
+   found_volunteers
+ end
 
   def ==(extra_project)
     self.title().==(extra_project.title()).&(self.id().==(extra_project.id()))
