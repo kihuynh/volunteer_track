@@ -25,7 +25,6 @@ end
 # goes to project id
 get('/projects/:id') do
   @project = Project.find(params.fetch("id").to_i)
-  # @volunteers = Volunteer.all
   erb(:projects)
 end
 
@@ -33,13 +32,9 @@ end
 post('/projects/:id') do
   @project = Project.find(params.fetch("id").to_i)
   name = params.fetch("name")
-  # @project.id = params.fetch("project.id").to_i
-  # id = volunteer.fetch("id").to_i
   @volunteer = Volunteer.new({:name => name, :project_id => @project.id, :id => nil})
-  # @project.id = volunteer.project_id
   @volunteer.save
 
-  # @volunteers = Volunteer.all
   erb(:projects)
 end
 
@@ -49,9 +44,17 @@ get('/projects/:id/edit') do
   erb(:project_edit)
 end
 
+# submit change and goes back to projects page
 patch('/projects/:id') do
   title = params.fetch("title")
   @project = Project.find(params.fetch("id").to_i)
   @project.update({:title => title})
   erb(:projects)
+end
+
+delete('/projects/:id') do
+  @project = Project.find(params.fetch("id").to_i)
+  @project.delete
+  @projects = Project.all
+  erb(:home)
 end

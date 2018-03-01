@@ -1,4 +1,3 @@
-<!-- View selected project and see volunteer name and add dem -->
 <a href="/">Return Home</a>
 
 <h1> <%= @project.title %> </h1>
@@ -16,7 +15,7 @@
 <ul>
   <% @project.volunteers.each do |volunteer| %>
   <li>
-    <a href="/volunteer/<%= volunteer.id %>"> <%= volunteer.name %> </a>
+    <p><%= volunteer.name %></p>
   </li>
 <% end %>
 </ul>
