@@ -43,9 +43,15 @@ post('/projects/:id') do
   erb(:projects)
 end
 
-# edit project. to delete, and update. edit project name. delete volunteers?
-get('projects/:id/edit') do
-  @projects = Project.find(params.fetch("id").to_i)
-
+# will go take that project.id into edit page
+get('/projects/:id/edit') do
+  @project = Project.find(params.fetch("id").to_i)
   erb(:project_edit)
+end
+
+patch('/projects/:id') do
+  title = params.fetch("title")
+  @project = Project.find(params.fetch("id").to_i)
+  @project.update({:title => title})
+  erb(:projects)
 end
